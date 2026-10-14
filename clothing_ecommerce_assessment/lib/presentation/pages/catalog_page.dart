@@ -106,13 +106,18 @@ class CatalogPage extends StatelessWidget {
         return const SizedBox.shrink();
       }));
   Widget _message(String text, IconData icon, VoidCallback retry) => Center(
-      child: Padding(
+        child: Padding(
           padding: const EdgeInsets.all(24),
-          child: Column(mainAxisSize: MainAxisSize.min, children: [
-            Icon(icon, size: 44),
-            const SizedBox(height: 12),
-            Text(text, textAlign: TextAlign.center),
-            const SizedBox(height: 12),
-            OutlinedButton(onPressed: retry, child: const Text('Try again'))
-          ])));
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(icon, size: 44),
+              const SizedBox(height: 12),
+              Text(text, textAlign: TextAlign.center),
+              const SizedBox(height: 12),
+              OutlinedButton(onPressed: retry, child: const Text('Try again'))
+            ],
+          ),
+        ),
+      );
 }

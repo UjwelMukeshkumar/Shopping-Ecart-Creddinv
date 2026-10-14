@@ -3,9 +3,8 @@ import '../repositories/product_repository.dart';
 
 class GetProducts {
   const GetProducts(this.repository);
+
   final ProductRepository repository;
+
   Future<List<Product>> call() => repository.getProducts();
 }
-
-/// Assessment terminology alias.
-typedef GetProductsUseCase = GetProducts;
