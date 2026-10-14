@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                                 .read<AuthBloc>()
                                 .add(LoginEmailChanged(v)),
                             decoration: InputDecoration(
-                                hintText: 'you@example.com',
+                                hintText: 'demo@threadco.com',
                                 prefixIcon: const Icon(Icons.mail_outline),
                                 errorText: form.emailError)),
                         const SizedBox(height: 18),

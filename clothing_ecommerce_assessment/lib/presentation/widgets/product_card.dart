@@ -62,17 +62,61 @@ class ProductCard extends StatelessWidget {
                   style: const TextStyle(
                       fontWeight: FontWeight.w800, fontSize: 16)),
               const SizedBox(height: 8),
-              SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton.icon(
-                      onPressed: () {
-                        context.read<CartBloc>().add(AddCartProduct(product));
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text('${product.name} added to cart'),
-                            duration: const Duration(seconds: 1)));
-                      },
-                      icon: const Icon(Icons.add_shopping_cart, size: 17),
-                      label: const Text('Add to Cart'))),
+              BlocBuilder<CartBloc, CartState>(builder: (context, cartState) {
+                final itemIndex = cartState.items
+                    .indexWhere((item) => item.product.id == product.id);
+                final cartItem =
+                    itemIndex == -1 ? null : cartState.items[itemIndex];
+
+                if (cartItem == null) {
+                  return SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton.icon(
+                          onPressed: () {
+                            context
+                                .read<CartBloc>()
+                                .add(AddCartProduct(product));
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text('${product.name} added to cart'),
+                                duration: const Duration(seconds: 1)));
+                          },
+                          icon: const Icon(Icons.add_shopping_cart, size: 17),
+                          label: const Text('Add to Cart')));
+                }
+
+                return SizedBox(
+                    width: double.infinity,
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: const Color(0xFFE0DED6)),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconButton(
+                                  visualDensity: VisualDensity.compact,
+                                  onPressed: () {
+                                    final nextQuantity = cartItem.quantity - 1;
+                                    context.read<CartBloc>().add(
+                                        nextQuantity <= 0
+                                            ? RemoveCartProduct(product.id)
+                                            : ChangeCartQuantity(
+                                                product.id, nextQuantity));
+                                  },
+                                  icon: const Icon(Icons.remove)),
+                              Text('${cartItem.quantity}',
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold)),
+                              IconButton(
+                                  visualDensity: VisualDensity.compact,
+                                  onPressed: () => context.read<CartBloc>().add(
+                                      ChangeCartQuantity(
+                                          product.id, cartItem.quantity + 1)),
+                                  icon: const Icon(Icons.add)),
+                            ])));
+              }),
             ])),
       ]));
 }
