@@ -1,0 +1,12 @@
+[
+ {"id":"p01","name":"Classic White Tee","subtitle":"Everyday cotton essential","price":499.0,"imageUrl":"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700"},
+ {"id":"p02","name":"Relaxed Denim Jacket","subtitle":"A timeless layering piece","price":1899.0,"imageUrl":"https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=700"},
+ {"id":"p03","name":"Linen Summer Shirt","subtitle":"Lightweight breathable linen","price":1299.0,"imageUrl":"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=700"},
+ {"id":"p04","name":"Everyday Chinos","subtitle":"Smart comfort, all day","price":1499.0,"imageUrl":"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=700"},
+ {"id":"p05","name":"Black Hoodie","subtitle":"Soft fleece relaxed fit","price":1599.0,"imageUrl":"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=700"},
+ {"id":"p06","name":"Striped Polo","subtitle":"Casual with a polished finish","price":999.0,"imageUrl":"https://images.unsplash.com/photo-1625910513413-5fc45e6f4f1f?w=700"},
+ {"id":"p07","name":"Straight Fit Jeans","subtitle":"Your everyday denim","price":1799.0,"imageUrl":"https://images.unsplash.com/photo-1542272604-787c3835535d?w=700"},
+ {"id":"p08","name":"Knit Crew Sweater","subtitle":"A cosy wardrobe staple","price":1999.0,"imageUrl":"https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=700"},
+ {"id":"p09","name":"Tailored Blazer","subtitle":"A clean modern silhouette","price":2999.0,"imageUrl":"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=700"},
+ {"id":"p10","name":"Everyday Sneakers","subtitle":"Minimal style and comfort","price":2199.0,"imageUrl":"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700"}
+]
